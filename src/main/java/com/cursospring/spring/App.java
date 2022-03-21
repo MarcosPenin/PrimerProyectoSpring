@@ -11,13 +11,19 @@ public class App {
 		
 		Saludator saludador=null;
 		
-		saludador=(Saludator) appContext.getBean("saludator");
+	//saludador=(Saludator) appContext.getBean("saludator");
 		
 	//	saludador=appContext.getBean("saludator",Saludator.class);
 		
-	//	saludador=appContext.getBean(Saludator.class);
+	 	saludador=appContext.getBean(Saludator.class);
 			
-		System.out.println(saludador.saludo());
+		System.out.println(saludador.saludo()+"\n");
+		
+		
+		EmailService emailService=null;
+		
+		emailService=appContext.getBean(EmailService.class);
+		emailService.enviarEmailSaludo("marcospenin@prueba.com");		
 		
 						
 		((ClassPathXmlApplicationContext) appContext).close();
