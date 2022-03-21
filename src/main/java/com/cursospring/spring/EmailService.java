@@ -1,6 +1,6 @@
 package com.cursospring.spring;
 
-public class EmailService {
+public class EmailService  {
 
 	private Saludator saludator;
 

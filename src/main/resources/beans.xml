@@ -6,21 +6,21 @@
 
 
 
-	<!-- Inyección mediante setter <bean id="saludator" class="com.cursospring.spring.Saludator"> 
-		<property name="mensaje" value="Inyectando dependencias"></property> </bean> -->
 
-	<!-- Inyección mediante constructor <bean id="saludator" class="com.cursospring.spring.Saludator"> 
-		<constructor-arg name="str" value= "Inyectando desde el constructor"></constructor-arg> 
-		</bean> -->
 
+<!--  Inyección automática usando el bytype -->
 	<bean id="emailService"
-		class="com.cursospring.spring.EmailService">
-		<property name="saludator" ref="saludator"></property>
+
+		class="com.cursospring.spring.EmailService" autowire="byType">
 
 	</bean>
 
+	<!-- autowire-candidate=false  para evitar que sea inyectado -->
+		<!-- primary=true  para darle prioridad cuando haya varios. Como un defalult -->
+
 	<bean id="saludator" class="com.cursospring.spring.Saludator">
-		<property name="mensaje" value="Bean que referencia a otro bean"></property>
+		<property name="mensaje"
+			value="Inyección automática de dependencias"></property>
 	</bean>
 </beans>
 
